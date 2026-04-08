@@ -1,0 +1,29 @@
+from pygame import *
+import sys
+
+init()
+
+window = display.set_mode((1280, 720))
+
+window.fill((25,25,112))
+
+
+
+while True:
+    for ev in event.get():
+        if ev.type == QUIT:
+            quit()
+            sys.exit()
+
+    # Casa
+    draw.rect(window, (0,0,0),(0,600,1280,120)) # Chão
+    draw.rect(window, (128,128,128),(1000,300,50,300) ) # Poste Luz
+    draw.rect(window, (255,250,250),(200,300,300,300)) # Casa em si
+    draw.rect(window, (165,42,42), (350,450,100,150)) # Porta
+    draw.rect(window, (0,0,0), (230,399,70,90)) # Janela
+    draw.line(window, (229,228,226), (265, 400), (265,489), 2) # Grade janela 1 
+    draw.line(window, (229,228,226), (300, 450), (230,450), 2) # Grade janela 2
+    
+    
+    
+    display.update()
