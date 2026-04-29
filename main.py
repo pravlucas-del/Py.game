@@ -41,8 +41,8 @@ while True:
     window.blit(Vader_image,(600,410))
 
     # Desenhar Textos
-    batman_text = batman_font.render('I am Batman',True,(0,0,0))
-    window.blit(batman_text,(100,400))
+    
+    
 
 
     
