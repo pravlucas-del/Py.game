@@ -45,7 +45,7 @@ class Personagem:
         return dano
 
 # Instâncias
-player = Personagem("Heroi", 100, 20, 150, 300, AZUL)
+player = Personagem("Heroi", 50, 20, 150, 300, AZUL)
 inimigo = Personagem("Monstro", 80, 15, 550, 300, VERMELHO)
 
 # Variáveis do jogo
@@ -56,7 +56,7 @@ relogio = pygame.time.Clock()
 
 # Loop Principal
 while rodando:
-    tela.fill(BRANCO)
+    tela.fill(PRETO)
     
     # Eventos
     for event in pygame.event.get():
