@@ -45,8 +45,9 @@ class Personagem:
         return dano
 
 # Instâncias
-player = Personagem("Heroi", 50, 20, 150, 300, AZUL)
-inimigo = Personagem("Monstro", 80, 15, 550, 300, VERMELHO)
+player = Personagem("Guerreiro", 50, 20, 150, 300, PRETO)
+inimigo = Personagem("The One", 80, 15, 550, 300, VERMELHO)
+inimigo2 = Personagem("BICALHO",100,25,450,150,CINZA)
 
 # Variáveis do jogo
 turno_player = True
@@ -56,7 +57,7 @@ relogio = pygame.time.Clock()
 
 # Loop Principal
 while rodando:
-    tela.fill(PRETO)
+    tela.fill(BRANCO)
     
     # Eventos
     for event in pygame.event.get():
@@ -88,9 +89,24 @@ while rodando:
             mensagem = "Game Over!"
             turno_player = None
 
+    # Turno do Inimigo 2
+    if turno_player == False and inimigo.hp > 0:
+        pygame.display.update()
+        pygame.time.wait(1000) # Pausa dramática
+        dano = inimigo.atacar(player)
+        mensagem = f"Monstro causou {dano} de dano!"
+        turno_player = True
+        
+        # Verifica se o jogador morreu
+        if player.hp <= 0:
+            mensagem = "Game Over!"
+            turno_player = None
+
+
     # Desenhar elementos
     player.desenhar(tela)
     inimigo.desenhar(tela)
+    inimigo2.desenhar(tela)
     
     # Desenhar mensagens
     texto_msg = fonte.render(mensagem, True, PRETO)
