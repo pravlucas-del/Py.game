@@ -2,6 +2,7 @@ import pygame
 import sys
 import json
 import random
+import time
 
 WIDTH, HEIGHT = 800, 600
 FPS = 60
@@ -128,7 +129,7 @@ class Game:
             Enemy((random.randint(0, 800), random.randint(0, 600)), [self.all_sprites, self.enemy_group], self.player, self.item_group, self.all_sprites)  # ✅ Passa item_group e all_sprites
 
     def save(self):
-        data = {" f)
+        data = (" ")
 
     def draw_ui(self):
         pygame.draw.rect(self.screen, (200,0,0), (20, 20, 150, 15))

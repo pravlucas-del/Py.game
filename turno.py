@@ -70,9 +70,19 @@ while rodando:
                 dano = player.atacar(inimigo)
                 mensagem = f"Você causou {dano} de dano!"
                 turno_player = False
+
+                # Turno do Jogador
+                dano = player.atacar(inimigo2)
+                mensagem = f"Você causou {dano} de dano!"
+                turno_player = False
                 
                 # Verifica se o inimigo morreu
                 if inimigo.hp <= 0:
+                    mensagem = "Você venceu!"
+                    turno_player = None # Fim de jogo
+                
+                # Verifica se o inimigo2 morreu
+                if inimigo2.hp <= 0:
                     mensagem = "Você venceu!"
                     turno_player = None # Fim de jogo
 
